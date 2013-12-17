@@ -4,22 +4,31 @@ background-repeat:no-repeat;
 background-attachment:fixed;
 background-position:center;
   max-width: 100% !important;
-  height: auto !important;
+  height: 100% !important;
   background-color: #fff;	
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+
 }   
 
+.main {
+  display: block;
+  float:right;
+}
 
 .center {
 box-shadow: 5px 5px 10px 0px #000 !important;
 
 }
+.logo {
+
+}
 
 .well {
 box-shadow: 5px 5px 10px 0px #000 !important;
+max-width: 300px;
 
 }
 
@@ -90,14 +99,23 @@ div {
   }
 }
 footer {
-margin-top: 125px;
-padding-top: 25px;
+  height: 30px;
+width:100%;
+padding: 25px;
+ bottom: 0px;
+position: fixed;
 border-top: 2px solid #888;
-color: #000 !important;
+color: #fff !important;
+background:#1e1e1e;
+margin-left: -20px;
 }
 
 footer p {
 float: right;
 font-weight: bold;
-color: #000 !important;
+color: #fff !important;
+padding-right:45px;
+}
+footer a {
+  color: #fff !important;
 }

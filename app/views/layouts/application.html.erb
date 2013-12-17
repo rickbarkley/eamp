@@ -1,4 +1,31 @@
 <!DOCTYPE html>
+<script>
+if(screen.width >= 480){
+function moveScroller() {
+    var move = function() {
+        var st = $(window).scrollTop();
+        var ot = $("#scroller-anchor").offset().top;
+        var s = $("#scroller");
+        if(st > ot) {
+            s.css({
+                position: "fixed",
+                top: "0px",
+                width:"auto"
+            });
+        } else {
+            if(st <= ot) {
+                s.css({
+                    position: "relative",
+                    top: ""
+                });
+            }
+        }
+    };
+    $(window).scroll(move);
+    move();
+}
+}
+</script>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -52,6 +79,7 @@
               <li><%= link_to "About", "/about"  %></li>
               <li><%= link_to "Success Stories", "/success"  %></li>
               <li><%= link_to "Donate", "/donate"  %></li>
+              <li><%= link_to "Projects", "/projects"  %></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -59,25 +87,29 @@
     </div>
     <div class="container-fluid">
       <div class="row-fluid">
+
         <div class="span3">
-			 <div class="pagination-centered">
-			<%= link_to image_tag("med_eamp6.png"), root_path %></div><br /><br />
-          <div class="well sidebar-nav">
-      
+			 
+          <div class="well nav-collapse affix-top" data-spy="affix" data-offset-top="50">
+            <div class="logo pagination-centered">
+      <%= link_to image_tag("med_eamp6.png"), root_path %></div><br /><br />   
 <p><b>Metamorphosis</b> | Defined as a complete change in appearance or circumstances. <b>East Africa Metamorphosis Project</b> seeks not only to help those in poverty, but through innovation, help solve the systemic issues causing extreme poverty.</p> <p>We firmly believe in the potential of this region, to not just see extreme poverty eliminated, but to become a hub of innovation and creativity.</p>
 
 <center><p><%= link_to "Projects", "/projects" %> | <%= link_to "Home", root_path  %> | <%= link_to "Donate", "/donate"  %></p></center>
-           
+       
           </div><!--/.well -->
+
         </div><!--/span-->
-        <div class="span9">
+
+        <div class="main span9">
           <%= bootstrap_flash %>
           <%= yield %>
         </div>
       </div><!--/row-->
       <footer>
         &copy; Designed by <a href="http://www.nuvola-networks.com">Nuvola Networks</a> 2013
-     <p><%= link_to "Contact", "/contact"  %> |
+     <p><%= link_to "Donate", "/donate"  %> |
+      <%= link_to "Contact", "/contact"  %> |
      <%= link_to "Twitter", "http://www.twitter.com/barkleyrick"  %> |
    <%= link_to "Facebook", "#"  %></p>
       </footer>
